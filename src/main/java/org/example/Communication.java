@@ -46,4 +46,11 @@ public class Communication {
         ResponseEntity<String> responseEntity = restTemplate.exchange(URL+"/"+id, HttpMethod.DELETE, requestBody, String.class);
         return responseEntity.getBody();
     }
+
+    public String editUser (User user, List<String> cookies) {
+        HttpHeaders headers = setHttpHeaders(cookies);
+        HttpEntity<User> requestBody = new HttpEntity<>(user, headers);
+        ResponseEntity<String> responseEntity = restTemplate.exchange(URL, HttpMethod.PUT, requestBody, String.class);
+        return responseEntity.getBody();
+    }
 }

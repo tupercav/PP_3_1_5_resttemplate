@@ -25,7 +25,7 @@ public class App
         //Edititing newUser and saving to get 2nd part of result
         newUser.setName("Thomas");
         newUser.setLastName("Shelby");
-        result += communication.saveUser(newUser, cookies);
+        result += communication.editUser(newUser, cookies);
 
         //Deleting newUser to get 3rd part of result
         result += communication.deleteUser(3, cookies);
